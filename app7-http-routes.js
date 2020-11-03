@@ -8,7 +8,7 @@ const server = http.createServer((request, response) => {
         response.write("Hello from node.js");
         response.end();
     }
-    if (request.url === '/api/players') {
+    if (request.url === '/dummy/api/players') {
         //go to database and get players
         //here we mimic this by calling the function getPlayers
         //which returns an array of Player objects

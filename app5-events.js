@@ -14,14 +14,14 @@ var eventTimer = null;
 var eventCounter = 0;
 emitEvent();
 
-function myHandler(e) {
-    console.log(e.name, e.date, e.module);
+function myHandler(name) {
+    console.log(name);
 }
 
 function emitEvent() {
     var eDate = new Date();
     var file = path.parse(__filename).base;
-    emitter.emit('myEvent', { name: 'MyEvent', date: eDate, module: file });
+    emitter.emit('myEvent'); //, { name: 'MyEvent', date: eDate, module: file }
     eventCounter++;
     if (eventCounter >= 10)
         clearTimeout(eventTimer);
